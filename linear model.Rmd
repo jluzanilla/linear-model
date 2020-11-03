@@ -1,0 +1,43 @@
+---
+title: "Linear Model"
+author: "Jeanette Serrano"
+date: "11/2/2020"
+output: html_document
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+dataF <- read.csv(file="http://onlinestatbook.com/case_studies_rvls/physical_strength/data.txt",sep="",header=TRUE)
+```
+
+
+```{r include=FALSE}
+require(tidyverse)
+require(tigerstats)
+require(rgl)
+require(knitr)
+```
+
+
+Plot scatterplot
+
+```{r}
+plot(SIMS~ARM,data=dataF)
+```
+
+
+```{r}
+basicNN <- ggplot(dataF,aes(y=SIMS,x=ARM))
+```
+
+Now add in scatterplot
+
+
+
+```{r}
+basicNN + geom_point()
+```
