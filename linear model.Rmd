@@ -39,5 +39,5 @@ Now add in scatterplot
 
 
 ```{r}
-basicNN + geom_point()
+basicNN + geom_point()+ geom_smooth(method=lm)
 ```
