@@ -41,3 +41,19 @@ Now add in scatterplot
 ```{r}
 basicNN + geom_point()+ geom_smooth(method=lm)
 ```
+
+```{r}
+plot(SIMS~GRIP,data=dataF)
+```
+
+```{r}
+basicNN <- ggplot(dataF,aes(y=SIMS,x=GRIP))
+```
+  
+```{r}
+basicNN + geom_point()+ geom_smooth(method=lm)
+```  
+    
+Now add in scatterplot
+  
+Plot of SIMS~GRIP~ARM will look like a plane in 3 dimensional space. We don't know how or have the tools to plot it. 
