@@ -45,6 +45,18 @@ basicNN + geom_point()+ geom_smooth(method=lm)
 ```{r}
 plot(SIMS~GRIP,data=dataF)
 ```
+```{r}
+new <- data.frame (ARM=88, GRIP=94)
+predict (model.1, new)
+predict (model.1,new,interval="prediction") 
+```
+
+```{r}
+new <- data.frame (ARM=88, GRIP=94)
+predict (model.1, new)
+predict (model.1,new,interval="prediction") 
+```
+
 
 ```{r}
 basicNN <- ggplot(dataF,aes(y=SIMS,x=GRIP))
@@ -69,9 +81,29 @@ summary.lm(model.2)
 ```
 
 ```{r}
+new <- data.frame (ARM=88, GRIP=94)
+predict (model.2, new)
+predict (model.2,new,interval="prediction") 
+```
+
+```{r}
 model.3 <- lm(SIMS~GRIP+ARM,data=dataF)
 summary.lm(model.3)
 ```
   
+  
+```{r}
+new <- data.frame (ARM=88, GRIP=94)
+predict (model.3, new)
+predict (model.3,new,interval="prediction") 
+```  
 The adjusted R-squared for Model 1 for ARM is better then GRIP. Model 2 is the worst and Model 1 is the second best and the best Model is Model 3.   
   
+
+```{r}
+anova(model.1,model.3)
+```
+
+
+There is about 30 points less than ARM, it's significant we are testing the value of F and value of linear model doing an inferential. It has a P value. The Null hypothesis has no difference, model 3 is doing much better job. Better model is 3. 
+
