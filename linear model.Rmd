@@ -46,14 +46,14 @@ basicNN + geom_point()+ geom_smooth(method=lm)
 plot(SIMS~GRIP,data=dataF)
 ```
 ```{r}
-new <- data.frame (ARM=88, GRIP=94)
-predict (model.1, new)
-predict (model.1,new,interval="prediction") 
+model.1=lm(SIMS~ARM,data=dataF)
+summary(model.1)
 ```
 
+
 ```{r}
-new <- data.frame (ARM=88, GRIP=94)
-predict (model.1, new)
+new<-data.frame (ARM=88, GRIP=94)  
+predict (model.1,new)
 predict (model.1,new,interval="prediction") 
 ```
 
