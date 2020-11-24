@@ -28,7 +28,8 @@ Plot scatterplot
 ```{r}
 plot(SIMS~ARM,data=dataF)
 ```
-
+  
+This particular model is explaining about 46% of variation using SIMS and ARM.  
 
 ```{r}
 basicNN <- ggplot(dataF,aes(y=SIMS,x=ARM))
@@ -79,7 +80,9 @@ summary.lm(model.1)
 model.2 <- lm(SIMS~GRIP,data=dataF)
 summary.lm(model.2)
 ```
-
+  
+Take the value of GRIP and multiply by 2.2e-16, this model explains more of the variation then the other two models. Model 1 and Model 2 are nested into Model 3. 
+  
 ```{r}
 new <- data.frame (ARM=88, GRIP=94)
 predict (model.2, new)
@@ -97,7 +100,7 @@ new <- data.frame (ARM=88, GRIP=94)
 predict (model.3, new)
 predict (model.3,new,interval="prediction") 
 ```  
-The adjusted R-squared for Model 1 for ARM is better then GRIP. Model 2 is the worst and Model 1 is the second best and the best Model is Model 3.   
+The adjusted R-squared for Model 1 for ARM is better then GRIP. Model 2 is the worst and Model 1 is the second best and the best Model is Model 3. When you compare Model 1 and Model 3 adding all squared errors. 217.88 to Model 3 of 188.45. It's significant because were changing the value. Model 3 is doing a much better job and works better in this experiment.    
   
 
 ```{r}
